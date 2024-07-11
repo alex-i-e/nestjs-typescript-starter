@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { config } from 'src/config/config';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { config } from 'src/config/config';
       isGlobal: true,
       load: [config],
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
